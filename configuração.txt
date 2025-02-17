@@ -1,0 +1,6 @@
+git config --global user.name DanielVianaC
+git config --global user.email daniel.carvalho85@etec.sp.gov.br
+
+npx create-expo-app@latest SilvinhaHealthApp --tempalte blank
+
+Es7+
