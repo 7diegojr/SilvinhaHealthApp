@@ -8,6 +8,15 @@ export default function App() {
         <Text style={styles.titleText}>Silvinha Health App</Text>
       </View>
 
+      <View style={styles.content}>
+        <Text style={styles.subTitle}>Calculadora de IMC</Text>
+
+        <View>
+          <Text style={styles.label}>Altura</Text>
+        </View>
+
+      </View>
+      
       <StatusBar style="light" />
     </SafeAreaView>
   );
@@ -32,5 +41,18 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: 'bold',
     marginBottom: 20,
+  },
+  content: {
+    flex: 1,
+    padding: 40,
+    width: '100%',
+    backgroundColor: 'edf2f4',
+  },
+  subTitle: {
+    textAlign: 'center',
+    fontSize: 24,
+    color: 'ef233c',
+    fontWeight: 'bold',
+    marginBottom: 40,
   }
 });
