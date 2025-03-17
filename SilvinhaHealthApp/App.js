@@ -1,8 +1,15 @@
+import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import Ionicons from "@expo/vector-icons/Ionicons"; 
 
 export default function App() {
+  const [height, setHeight] = useState(null);
+  const [weight, setWeight] = useState(null);
+  const [imct, setImc] = useState(null);
+  const [textButton, setTextButton] = useState("Calcular");
+  const [MessangeImc, setMessangeImc] = useState("Preencha o peso e a altura");
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.titleBox}>
@@ -34,8 +41,13 @@ export default function App() {
          onPress={() => alert('Drinho do Dry novamente')}
          >
           <Ionicons name= {"calculator-sharp"} size={24} color="#edf2f4"/>
-            <Text style={styles.text}>Calcular</Text>
+            <Text style={styles.text}>{textButton}</Text>
         </TouchableOpacity>
+
+        <View style={styles.imcContainer}>
+          <Text style={styles.imcText}>Preecha o peso e a altura</Text>
+          <Text style={styles.imcResult}></Text>
+        </View>
 
       </View>
       
@@ -105,5 +117,21 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginLeft: 5
+  },
+  imcContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+  },
+  imcText: {
+    fontSize: 18,
+    color: '#ef233c',
+    fontWeight: 'bold'
+  },
+  imcResult: {
+    fontSize: 48,
+    color: '#ef233c',
+    fontWeight: 'bold',
   }
 });
